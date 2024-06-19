@@ -16,7 +16,11 @@ public class Bootstrap : MonoBehaviour
 
     private async void Start()
     {
+        float positionX = _objectToMove.transform.position.x;
+
         _image.ChangeAlphaAsync(_targetAlpha, _changingStep, _durationStepInMilliseconds);
-        _objectToMove.transform.MoveAsync(_targetPosition, _movingStep);
+        await _objectToMove.transform.MoveAsync(_targetPosition, _movingStep);
+
+        _objectToMove.transform.SetX(positionX);
     }
 }

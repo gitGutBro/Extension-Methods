@@ -22,4 +22,7 @@ public static class ExtensionMethods
             await UniTask.Yield();
         }
     }
+
+    public static void SetX(this Transform transform, float x) => 
+        transform.position = new Vector3(x, transform.position.y, transform.position.z);
 }
